@@ -9,7 +9,7 @@
   --dark-blue: hsl(223, 47%, 23%);
 
   /* Font */
-  --ff-base: "Red Hat Display", san-serif;
+  --ff-base: "Red Hat Display", sans-serif;
   --fw-medium: 500;
   --fw-bold: 700;
   --fw-black: 900;
@@ -28,6 +28,30 @@ html {
 }
 
 body {
-  background-color: white;
+  background-color: var(--very-pale-blue);
   font-size: 1.6rem;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 350px;
+  display: flex;
+}
+
+.img-box img {
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
