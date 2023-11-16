@@ -2,6 +2,7 @@
   /* Primary Colors */
   --pale-blue: hsl(225, 100%, 94%);
   --bright-blue: hsl(245, 75%, 52%);
+  --bright-blue-reduced: hsl(245, 75%, 52%, 0.7);
 
   /* Neutral Colors */
   --white: rgb(255, 255, 255);
@@ -42,7 +43,7 @@ body {
 }
 
 .container {
-  max-width: 350px;
+  max-width: 40rem;
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -51,14 +52,27 @@ body {
   box-shadow: 0px 0px 0px 5px hsla(255, 255, 255, 0.2%);
 }
 
+@media (max-width: 375px) {
+  .container {
+    margin: 0 2rem;
+    max-width: 35rem;
+  }
+}
+
 .img-box img {
   width: 100%;
 }
 
 .text-content {
   background-color: var(--white);
-  padding: 2.8rem;
+  padding: 4rem;
   text-align: center;
+}
+
+@media (max-width: 375px) {
+  .text-content {
+    padding: 2.4rem;
+  }
 }
 
 .title {
@@ -80,7 +94,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.6rem;
+  padding: 2rem;
   background-color: var(--very-pale-blue);
   border-radius: 8px;
   margin-bottom: 2.8rem;
@@ -89,7 +103,7 @@ body {
 .flex-group {
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 1.6rem;
 }
 
 .product-plan {
@@ -108,9 +122,17 @@ body {
   color: var(--desaturated-blue);
 }
 
-.product a {
+.product a:visited,
+.product a:link {
   font-weight: var(--fw-bold);
   font-size: 1.3rem;
+  color: var(--bright-blue);
+}
+
+.product a:active,
+.product a:hover {
+  text-decoration: none;
+  color: var(--bright-blue-reduced);
 }
 
 .btn {
@@ -124,6 +146,10 @@ body {
   font-weight: var(--fw-bold);
 }
 
+.btn:hover {
+  background-color: var(--bright-blue-reduced);
+}
+
 .btn--primary {
   margin-bottom: 2rem;
   box-shadow: 0px 10px 16px -3px hsla(255, 0%, 0%, 0.25);
@@ -134,11 +160,22 @@ body {
   color: var(--desaturated-blue);
 }
 
+.btn--tertiary:hover {
+  background-color: var(--very-pale-blue);
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 1.1rem;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--bright-blue);
+  text-decoration: underline;
+  font-weight: var(--fw-bold);
+}
+
+.attribution a:hover {
+  color: var(--bright-blue-reduced);
+  text-decoration: none;
 }
